@@ -67,4 +67,4 @@ npm run dev
 ```
 
 ---
-*Développé avec ❤️ pour le PFE.*
+*Développé avec Mohsine DAHNAOUI, Anas SABIQ et Ilyas QUIAOMI.*
