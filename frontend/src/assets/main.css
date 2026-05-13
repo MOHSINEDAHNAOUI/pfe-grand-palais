@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #0f172a;      /* Deep Midnight */
+  --secondary: #1e293b;    /* Slate 800 */
+  --accent: #b45309;       /* Muted Amber/Gold */
+  --accent-light: #fef3c7;
+  --bg-main: #f8fafc;
+  --bg-surface: #ffffff;
+  --border: rgba(0, 0, 0, 0.06);
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
+}
+
+/* ── Typography & Components ─────────────────────────────────── */
+
+.premium-title {
+  font-family: var(--font-serif);
+  letter-spacing: -0.02em;
+  color: var(--primary);
+}
+
+.gold-divider {
+  width: 48px;
+  height: 2px;
+  background: var(--accent);
+  margin: 1.5rem auto;
+  opacity: 0.6;
+}
+
+/* Modern Buttons */
+.btn-premium {
+  @apply px-8 py-3.5 text-sm font-semibold tracking-wide uppercase transition-all duration-300;
+  background: var(--primary);
+  color: white;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-premium:hover {
+  background: #1e293b;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline-premium {
+  @apply px-8 py-3.5 text-sm font-semibold tracking-wide uppercase transition-all duration-300;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+  border-radius: 4px;
+}
+
+.btn-outline-premium:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-gold-premium {
+  @apply px-8 py-3.5 text-sm font-semibold tracking-wide uppercase transition-all duration-300;
+  background: var(--accent);
+  color: white;
+  border-radius: 4px;
+}
+
+.btn-gold-premium:hover {
+  background: #92400e;
+  transform: translateY(-1px);
+}
+
+/* ── Cards & Containers ─────────────────────────────────────── */
+
+.card-elegant {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.card-elegant:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+  border-color: rgba(180, 83, 9, 0.2);
+}
+
+/* ── Inputs ─────────────────────────────────────────────────── */
+
+.input-clean {
+  @apply w-full transition-all duration-300;
+  background: var(--bg-surface);
+  border: 1px solid #e2e8f0;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.input-clean:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(180, 83, 9, 0.1);
+}
+
+/* ── Animations ─────────────────────────────────────────────── */
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Global Premium Aesthetics */
+::selection {
+  background-color: rgba(180, 83, 9, 0.2);
+  color: #0f172a;
+}
+
+/* Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b45309;
+}
+
+/* Utility Animations */
+.animate-slow-zoom {
+  animation: slowZoom 30s linear infinite alternate;
+}
+
+@keyframes slowZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.15); }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #E2E8F0;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
